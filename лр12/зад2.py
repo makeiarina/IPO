@@ -1,4 +1,4 @@
-class MusicCollection:
+class MusicCollection:#это определение класса MusicCollection. Он представляет собой коллекцию музыкальных альбомов.
     def __init__(self, artist, album, num_tracks):
         self._artist = None
         self._album = None
@@ -8,47 +8,45 @@ class MusicCollection:
         self.set_album(album)
         self.set_num_tracks(num_tracks)
 
-    def __del__(self):
-        print("Деструктор выполнен для", self.get_album())
+    def __del__(self):#это метод деструктора класса MusicCollection. Он будет вызываться при уничтожении объекта этого класса. В этом случае он просто печатает сообщение, указывающее, что для альбома выполнен деструктор.
+        print("Деструктор выполнен для", self.get_album())#эта строка печатает сообщение, указывающее, что для альбома выполнен деструктор.
 
-    def set_artist(self, artist):
-        self._artist = artist
+    def set_artist(self, artist):#это метод установки переменной экземпляра Artist. Он устанавливает предоставленное имя исполнителя.
+        self._artist = artist#эта строка устанавливает переменную экземпляра _artist в указанное имя исполнителя.
 
-    def set_album(self, album):
-        self._album = album
+    def set_album(self, album):#это метод установки переменной экземпляра альбома. Он устанавливает предоставленное название альбома.
+        self._album = album#эта строка устанавливает переменную экземпляра _album в указанное имя альбома.
 
-    def set_num_tracks(self, num_tracks):
-        if num_tracks < 0:
-            print("Ошибка: некорректное количество треков")
+    def set_num_tracks(self, num_tracks):#это метод установки переменной экземпляра num_tracks. Он устанавливает предоставленное количество треков.
+        if num_tracks < 0:#Эта строка проверяет, меньше ли заданное количество дорожек 0.
+            print("Ошибка: некорректное количество треков")#эта строка выводит сообщение об ошибке, указывающее, что количество треков неверно.
         else:
-            self._num_tracks = num_tracks
+            self._num_tracks = num_tracks#эта строка устанавливает для переменной экземпляра _num_tracks указанное количество дорожек.
 
-    def set_duration(self, duration):
-        if duration < 0:
-            print("Ошибка: некорректная продолжительность")
+    def set_duration(self, duration):#это метод установки переменной экземпляра длительности. Он устанавливает предоставленную продолжительность.
+        if duration < 0:#эта строка проверяет, меньше ли указанная продолжительность 0.
+            print("Ошибка: некорректная продолжительность")#эта строка выводит сообщение об ошибке, указывающее, что продолжительность неверна.
         else:
-            self._duration = duration
+            self._duration = duration#Эта строка устанавливает для переменной экземпляра _duration указанную продолжительность.
 
-    def get_artist(self):
-        return self._artist
+    def get_artist(self):#это метод получения переменной экземпляра художника. Он возвращает значение _artist.
+        return self._artist#эта строка возвращает значение _artist
 
-    def get_album(self):
-        return self._album
+    def get_album(self):#это метод получения переменной экземпляра альбома. Он возвращает значение _album.
+        return self._album#эта строка возвращает значение _album
 
-    def get_num_tracks(self):
-        return self._num_tracks
+    def get_num_tracks(self):#это метод получения переменной экземпляра num_tracks. Он возвращает значение _num_tracks.
+        return self._num_tracks#эта строка возвращает значение _num_tracks.
 
-    def get_duration(self):
-        return self._duration
+    def get_duration(self):#это метод получения переменной экземпляра продолжительности. Он возвращает значение _duration.
+        return self._duration#эта строка возвращает значение _duration.
 
 
 # Создание списка объектов с использованием конструктора
-collection_list = []
-for _ in range(10):
-    artist = input("Введите исполнителя: ")
-    album = input("Введите название альбома: ")
-    num_tracks = int(input("Введите количество треков: "))
-    collection = MusicCollection(artist, album, num_tracks)
-    collection_list.append(collection)
-
-# Пример вызова деструктора для каждого элемента списка при завершении программы
+collection_list = []#эта строка создает пустой список с именем Collection_list для хранения экземпляров объектов MusicCollection.
+for _ in range(10):#Эта строка запускает цикл, который повторяется 10 раз.
+    artist = input("Введите исполнителя: ")#эта строка предлагает пользователю ввести имя исполнителя и присваивает его переменной Artist.
+    album = input("Введите название альбома: ")#эта строка предлагает пользователю ввести название альбома и присваивает его переменной альбома.
+    num_tracks = int(input("Введите количество треков: "))#эта строка предлагает пользователю ввести количество треков в альбоме и присваивает его переменной num_tracks после преобразования его в целое число.
+    collection = MusicCollection(artist, album, num_tracks)#эта строка создает новый экземпляр класса MusicCollection с указанным исполнителем, альбомом и количеством треков и присваивает его переменной коллекции.
+    collection_list.append(collection)#та строка добавляет созданный объект коллекции в список Collection_list. Он сохраняет все созданные объекты для дальнейшего использования.
